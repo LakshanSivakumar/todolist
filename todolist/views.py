@@ -71,6 +71,11 @@ def listpage():
         db.session.add(tasks)
         db.session.commit()
     
+    try:
+        task = Tasks.query.all()
+        return render_template('listpage.html', username=username, form = form, task= task)
+    except Exception as e:
+        error = '<h1>Something is broken</h1>'
+        return error
 
 
-    return render_template('listpage.html', username=username, form = form)

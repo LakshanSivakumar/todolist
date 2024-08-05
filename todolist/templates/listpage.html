@@ -17,7 +17,16 @@
             </div>
         </fieldset>
     </form>
+    
+    
     <h1></h1>
 </div>
-
+<div style="position: relative; top: 60%;">
+    <h1>Current Tasks:</h1>
+    <div>
+        {% for i in task %}
+             <li>{{i.task}}</li>
+        {% endfor %}
+    </div>
+</div>
 {%endblock%}

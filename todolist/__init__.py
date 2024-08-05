@@ -11,7 +11,7 @@ migrate = Migrate(app, db)
 from todolist import views
 from todolist import models
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
 
 
 
