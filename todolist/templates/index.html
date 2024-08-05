@@ -1,0 +1,12 @@
+{% extends "template.html" %}
+{%block content%}
+<h1 id="welcome">Welcome!</h1>
+
+            <a href="{{url_for('register')}}">
+                <button type="button" class="btn btn-primary btn-lg" style="display:inline" id="registerbtn">Register</button>
+            </a>
+            <a href="{{url_for('login')}}">
+                <button type="button" class="btn btn-primary btn-lg" style="display:inline" id="loginbtn">Login</button>
+            </a>
+        
+{%endblock%}

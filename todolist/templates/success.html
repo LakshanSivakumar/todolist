@@ -1,0 +1,8 @@
+
+{% extends "template.html" %}
+{%block content%}
+<h1 style="position: absolute; top: 40%; left: 27%; color: #ffffff;">You have successfully created an account.</h1>
+<a href="{{url_for('login')}}">
+    <button type="button" class="btn btn-success" style="position: relative; top: 50%; left: 39%; height: 50px; font-size: 20px;">Press this to proceed to login page</button>
+</a>
+{%endblock%}
