@@ -64,12 +64,15 @@ def success():
 @app.route('/listpage', methods=['GET', 'POST'])
 def listpage():
     form = TaskForm()
-        
-    username = login_session['username']
-    if form.validate_on_submit():
-        tasks = Tasks(task = form.task.data)
-        db.session.add(tasks)
-        db.session.commit()
+    try:    
+        username = login_session['username']
+        if form.validate_on_submit():
+            tasks = Tasks(task = form.task.data)
+            db.session.add(tasks)
+            db.session.commit()
+    except Exception as e:
+        error = '<h1>Data is already added, please go back</h1>'
+        return error
     
     try:
         task = Tasks.query.all()
